@@ -5,14 +5,17 @@ public class Robot {
 	private String type;
 	private String color;
 	private String greeting;
-	private static int serialNo = 1000; //startnummer för serien
+	private int countSerialNo = 1000; //startnummer för serien
+	private int serialNo;
 	
 
 	public Robot(String type, String color, String greeting) {
 		this.type = type;
 		this.color = color;
 		this.greeting = greeting;
-		serialNo++;
+		countSerialNo++;
+		serialNo = countSerialNo;
+		
 	}
 
 
