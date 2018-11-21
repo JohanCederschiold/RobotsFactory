@@ -68,6 +68,12 @@ public class RobotFactory {
 		this.slogan = slogan;
 	}
 	
+	public List<Robot> getStocks () {
+		
+		return stocks;
+		
+	}
+	
 	
 	
 	
