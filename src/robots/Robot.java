@@ -36,8 +36,15 @@ public class Robot {
 	}
 
 
-	public void setColor(String chosenColor) {
-		this.color = chosenColor;
+
+	public void setColor(String color) {
+		if (!color.equalsIgnoreCase("black")) {
+			this.color = color;
+		} else {
+			this.color = "Black";
+		}
+		
+
 	}
 
 
