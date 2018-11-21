@@ -10,7 +10,7 @@ public class Robot {
 
 	public Robot(String type, String color, String greeting) {
 		this.type = type;
-		setColor(color);
+		this.color = color;
 		this.greeting = greeting;
 		serialNo++;
 	}
@@ -36,13 +36,8 @@ public class Robot {
 	}
 
 
-	public void setColor(String color) {
-		if (color.equalsIgnoreCase("black")) {
-			this.color = color;
-		} else {
-			this.color = "Black";
-		}
-		
+	public void setColor(String chosenColor) {
+		this.color = chosenColor;
 	}
 
 
@@ -51,7 +46,7 @@ public class Robot {
 	}
 	
 	public String toString () {
-		return "good";
+		return String.format("Type: %s   Color: %s   SerialNo: %d", type, color, serialNo);
 	}
 	
 	
