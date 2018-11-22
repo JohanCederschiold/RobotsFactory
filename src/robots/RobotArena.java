@@ -2,10 +2,14 @@ package robots;
 
 import java.util.Random;
 
-public class RobotArena {
+public class RobotArena  {
 	
+
 	private Robot one;
 	private Robot two;
+	private Robot winner;
+	private int originalHpOne;
+	private int originalHpTwo;
 	private Random random = new Random();
 	
 	
@@ -15,9 +19,12 @@ public class RobotArena {
 		one = robotOne;
 		two = robotTwo;
 		
+		originalHpOne = one.getHealthpoint();
+		originalHpTwo = two.getHealthpoint();
+		
 	}
 	
-	public Robot robotFight () {
+	public void robotFight () {
 		
 		while (one.getHealthpoint() > 0 && two.getHealthpoint() > 0) {
 			one.setHealthpoints(one.getHealthpoint() - random.nextInt(20));
@@ -28,14 +35,20 @@ public class RobotArena {
 		}
 		
 		if (one.getHealthpoint() > two.getHealthpoint()) {
-			return one;
+			winner = one;
 		} else if (one.getHealthpoint() == two.getHealthpoint()) {
-			return null;
+			one.setHealthpoints(originalHpOne);
+			two.setHealthpoints(originalHpTwo);
+			robotFight();
 		} else {
-			return two;
+			winner = two;
 		}
 		
  		
+	}
+	public Robot getWinner () {
+		return winner;
+		
 	}
 
 }
