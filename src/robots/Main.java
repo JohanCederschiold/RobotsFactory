@@ -15,8 +15,12 @@ public class Main {
 		
 		RobotArena arena = new RobotArena(no1, no2);
 		
-		arena.robotFight();
+		arena.activity.start();
 		
+		while (arena.activity.isAlive()) {
+			
+		}
+
 		System.out.printf("The winner is %s", arena.getWinner());
 	}
 

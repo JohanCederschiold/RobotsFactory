@@ -2,9 +2,9 @@ package robots;
 
 import java.util.Random;
 
-public class RobotArena  {
+public class RobotArena implements Runnable  {
 	
-
+	public Thread activity = new Thread(this);
 	private Robot one;
 	private Robot two;
 	private Robot winner;
@@ -27,6 +27,13 @@ public class RobotArena  {
 	public void robotFight () {
 		
 		while (one.getHealthpoint() > 0 && two.getHealthpoint() > 0) {
+			
+			try {
+				Thread.sleep(random.nextInt(7) * 1000);
+			} catch (InterruptedException e) {
+				System.out.println("interrupted");
+			}
+			
 			one.setHealthpoints(one.getHealthpoint() - random.nextInt(20));
 			two.setHealthpoints(two.getHealthpoint() - random.nextInt(20));
 			
@@ -48,6 +55,13 @@ public class RobotArena  {
 	}
 	public Robot getWinner () {
 		return winner;
+		
+	}
+
+	@Override
+	public void run() {
+		
+		robotFight();
 		
 	}
 
