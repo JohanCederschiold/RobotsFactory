@@ -5,6 +5,7 @@ public class Robot {
 	private String type;
 	private String color;
 	private String greeting;
+	private int healthpoints;
 	private static int counterSerialNo = 1000; //startnummer för serien
 	private int serialNo;
 	
@@ -13,6 +14,7 @@ public class Robot {
 		this.type = type;
 		this.color = color;
 		this.greeting = greeting;
+		healthpoints = 100;
 		serialNo = counterSerialNo;
 		counterSerialNo++;
 	}
@@ -56,6 +58,15 @@ public class Robot {
 	
 	public String toString () {
 		return String.format("Type: %s   Color: %s   SerialNo: %d", type, color, serialNo);
+	}
+	
+	public int getHealthpoint() {
+		return healthpoints;
+	}
+	
+	public void setHealthpoints (int hp) {
+		
+		healthpoints = hp;
 	}
 	
 	

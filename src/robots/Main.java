@@ -11,11 +11,19 @@ public class Main {
 		
 //		factory.letRobotsOnStockSayHi();
 		
-		List<Robot> myList = factory.getStocks();
+//		List<Robot> myList = factory.getStocks();
+//		
+//		for (Robot robot : myList) {
+//			System.out.println(robot);
+//		}
 		
-		for (Robot robot : myList) {
-			System.out.println(robot);
-		}
+		
+		Robot no1 = new Robot ("Slayer", "Green", "Hi");
+		Robot no2 = new Robot ("Butcher", "Blue", "Dave?");
+		
+		RobotArena arena = new RobotArena(no1, no2);
+		
+		System.out.println(arena.robotFight());
 
 	}
 
