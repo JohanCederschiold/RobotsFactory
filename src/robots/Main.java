@@ -16,10 +16,13 @@ public class Main {
 		RobotArena arena = new RobotArena(no1, no2);
 		
 		arena.activity.start();
+		try {
+			arena.activity.join();
+		} catch (InterruptedException e) {}
 		
-		while (arena.activity.isAlive()) {
-			
-		}
+//		while (arena.activity.isAlive()) {
+//			
+//		}
 
 		System.out.printf("The winner is %s", arena.getWinner());
 	}
